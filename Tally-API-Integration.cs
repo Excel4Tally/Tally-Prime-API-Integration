@@ -1,0 +1,12 @@
+var client = new RestClient("API URL here");
+client.Timeout = -1;
+var request = new RestRequest(Method.POST);
+request.AddHeader("Content-Type", "application/json");
+request.AddHeader("TemplateName", "Journal Entry");
+request.AddHeader("APIKey", "162b9b25-78b9-40fc-8df9-65bb832f82fa");
+request.AddHeader("APISecret", "c20894d2-1d47-4458-a0f5-85cc87e5554a");
+request.AddHeader("MasterFlag", "true");
+request.AddHeader("CompanyName", "ABC Company");
+request.AddFile("", "/C:/Users/Test/Downloads/Journal_Entry_Sample (2).xlsx");
+IRestResponse response = client.Execute(request);
+Console.WriteLine(response.Content);
